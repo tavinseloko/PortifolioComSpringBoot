@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfólio Profissional | Técnico em ADS</title>
+    <!-- Vincula o CSS externo -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="navbar">
+        <div class="brand">&lt;TADS.Dev /&gt;</div>
+        <nav class="nav-links">
+            <a href="#about">Sobre</a>
+            <a href="#skills">Habilidades</a>
+            <a href="#projects">Projetos</a>
+            <a href="#admin">Admin</a>
+            <a href="#contact">Contato</a>
+            <button id="theme-toggle" class="theme-btn" aria-label="Alternar Tema">☀️</button>
+        </nav>
+    </header>
+
+    <main>
+        <section id="about" class="hero">
+            <div class="hero-content">
+                <span class="badge hero-badge">Análise e Desenvolvimento de Sistemas</span>
+                <h1>Desenvolvedor de Software Full Stack</h1>
+                <p>
+                    Perfil voltado ao desenvolvimento com <strong>Java (Spring Boot)</strong>, 
+                    <strong>HTML5, CSS3 e JavaScript</strong>, com prática em bancos de dados relacionais 
+                    (<strong>MySQL, PostgreSQL, SQLite</strong>) e ferramentas como <strong>NetBeans, Git e GitHub</strong>, 
+                    além de fundamentos sólidos em <strong>Python, PHP e C++</strong>.
+                </p>
+            </div>
+        </section>
+
+        <section id="skills" class="section-container">
+            <div class="section-header">
+                <h2>Tecnologias & Ferramentas</h2>
+                <p>Selecione uma categoria para filtrar as competências:</p>
+            </div>
+            
+            <div class="filter-group">
+                <button class="filter-btn active" data-category="todas">Todas</button>
+                <button class="filter-btn" data-category="Backend">Backend & Linguagens</button>
+                <button class="filter-btn" data-category="Frontend">Frontend</button>
+                <button class="filter-btn" data-category="Database">Bancos de Dados</button>
+                <button class="filter-btn" data-category="IDE">IDEs</button>
+                <button class="filter-btn" data-category="Outros">Versionamento</button>
+            </div>
+
+            <div id="tech-grid" class="cards-grid"></div>
+        </section>
+
+        <section id="projects" class="section-container">
+            <div class="section-header">
+                <h2>Projetos em Destaque</h2>
+                <p>Aplicações práticas desenvolvidas ao longo dos estudos:</p>
+            </div>
+            <div id="project-grid" class="cards-grid"></div>
+        </section>
+
+        <section id="admin" class="section-container">
+            <div class="panel-card">
+                <div class="panel-header">
+                    <h2>Gerenciador de Tecnologias (Admin)</h2>
+                    <p>Adicione novas competências ou atualize as existentes com persistência imediata.</p>
+                </div>
+                <form id="tech-form">
+                    <input type="hidden" id="tech-id">
+                    <div class="form-grid">
+                        <div class="form-control">
+                            <label for="tech-name">Nome da Ferramenta</label>
+                            <input type="text" id="tech-name" placeholder="Ex: Docker, Tailwind CSS" required>
+                        </div>
+                        <div class="form-control">
+                            <label for="tech-category">Categoria</label>
+                            <select id="tech-category" required>
+                                <option value="Backend">Backend</option>
+                                <option value="Frontend">Frontend</option>
+                                <option value="Database">Database</option>
+                                <option value="IDE">IDE</option>
+                                <option value="Outros">Outros</option>
+                            </select>
+                        </div>
+                        <div class="form-control">
+                            <label for="tech-level">Nível</label>
+                            <select id="tech-level" required>
+                                <option value="Básico">Básico</option>
+                                <option value="Intermediário">Intermediário</option>
+                                <option value="Avançado">Avançado</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-control">
+                        <label for="tech-desc">Descrição Prática</label>
+                        <textarea id="tech-desc" rows="2" placeholder="Descreva os conceitos ou projetos em que aplicou..."></textarea>
+                    </div>
+                    <div class="actions">
+                        <button type="submit" class="btn btn-primary" id="save-btn">Salvar Tecnologia</button>
+                        <button type="button" id="cancel-edit" class="btn btn-secondary" style="display:none;">Cancelar</button>
+                    </div>
+                </form>
+            </div>
+        </section>
+
+        <section id="contact" class="section-container">
+            <div class="panel-card">
+                <div class="panel-header">
+                    <h2>Entre em Contato</h2>
+                    <p>Preencha os campos abaixo para enviar uma mensagem direta.</p>
+                </div>
+                <form id="contact-form">
+                    <div class="form-grid-2">
+                        <div class="form-control">
+                            <label for="contact-name">Seu Nome</label>
+                            <input type="text" id="contact-name" placeholder="Nome completo" required>
+                        </div>
+                        <div class="form-control">
+                            <label for="contact-email">Seu E-mail</label>
+                            <input type="email" id="contact-email" placeholder="nome@email.com" required>
+                        </div>
+                    </div>
+                    <div class="form-control">
+                        <label for="contact-msg">Mensagem</label>
+                        <textarea id="contact-msg" rows="4" placeholder="Escreva sua mensagem..." required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Enviar Mensagem</button>
+                    <div id="contact-status" class="alert-status"></div>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p>&copy; 2026 Portfólio Profissional TADS &bull; Desenvolvido com HTML5, CSS3 e JavaScript.</p>
+    </footer>
+
+    <!-- Vincula o JS externo -->
+    <script src="script.js"></script>
+</body>
+</html>
